@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddProduct"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/ET_addProdName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Product Name"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/ET_addProdCost"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Product Cost"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/ET_addProdPrice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Product Retail Price"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/ET_addQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Product Stock Quantity"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:inputType="number"/>
+
+    <Button
+        android:id="@+id/btn_addProdPic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pressed_btn"
+        android:text="PICTURE"
+        android:layout_margin="10dp"/>
+
+    <ImageView
+        android:id="@+id/IV_AddProdPic"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"/>
+
+    <ProgressBar
+        android:id="@+id/PB_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        />
+
+    <Button
+        android:id="@+id/btn_addStock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pressed_btn"
+        android:text="Add Stock"
+        android:layout_margin="10dp"/>
+
+
+</LinearLayout>

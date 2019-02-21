@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1097329233667",
+    "firebase_url": "https://easy-gift-zone-bd.firebaseio.com",
+    "project_id": "easy-gift-zone-bd",
+    "storage_bucket": "easy-gift-zone-bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097329233667:android:085a07c528ce2b20",
+        "android_client_info": {
+          "package_name": "easygiftzonebd.com.secretdevelopersltd.dexian.easygiftzonebd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097329233667-mi0elmvrncspak43pav1v0jjubukl3i8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "easygiftzonebd.com.secretdevelopersltd.dexian.easygiftzonebd",
+            "certificate_hash": "ab0e1b8fe2da9a10a253e5e86b9c8f5d69f35fb2"
+          }
+        },
+        {
+          "client_id": "1097329233667-o97qrj2lc5b5ms87uojsh6lf0habml93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1Kqpraz9IvstZ2Uj0QRykJwTITZ4Cw0g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097329233667-o97qrj2lc5b5ms87uojsh6lf0habml93.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

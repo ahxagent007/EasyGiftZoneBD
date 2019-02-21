@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShipmentDetails">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/IV_ShipmentPicture1"
+                android:layout_width="match_parent"
+                android:layout_height="700dp"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:id="@+id/TV_ShipmentNamee1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="SHIPMENT001"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textSize="25dp"/>
+
+            <TextView
+                android:id="@+id/TV_ShippingDate1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Shipping Date: 02/02/20"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textSize="25dp"/>
+
+            <TextView
+                android:id="@+id/TV_ArivalDate1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Shipping Date: 02/02/20"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textSize="25dp"/>
+
+            <TextView
+                android:id="@+id/TV_ShipmentCost1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="BDT 18000"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textSize="25dp"/>
+
+            <TextView
+                android:id="@+id/TV_ShipmentDetails1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="SHIPMENT001"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textSize="25dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

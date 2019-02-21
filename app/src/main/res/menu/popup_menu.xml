@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/ProDelete"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Delete"
+        />
+    <item android:id="@+id/ProEdit"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="Edit" />
+
+    <item android:id="@+id/ProCost"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="Cost" />
+</menu>
