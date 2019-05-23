@@ -225,7 +225,7 @@ public class AddProduct extends AppCompatActivity {
         Date date = new Date();
         String dddd = dateFormat.format(date);
 
-        Product product = new Product(productID,name, cost, price, pic,dddd,quantity);
+        Product product = new Product(productID, name.toUpperCase(), cost, price, pic,dddd,quantity);
 
         mDatabaseRef.child(""+productID).setValue(product);
 

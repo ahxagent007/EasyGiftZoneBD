@@ -29,6 +29,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -63,6 +64,9 @@ public class Stock extends AppCompatActivity {
         setContentView(R.layout.activity_stock);
 
         PB_loading = findViewById(R.id.PB_loading);
+        btn_search = findViewById(R.id.btn_search);
+        TV_searchText = findViewById(R.id.TV_searchText);
+
 
         //Recycle View----------------------------------------------------------------------------------
         // Calling the RecyclerView
@@ -102,6 +106,14 @@ public class Stock extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 PB_loading.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        btn_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String searchText = TV_searchText.getText().toString();
+                SearchProduct(searchText);
             }
         });
 
@@ -284,6 +296,51 @@ public class Stock extends AppCompatActivity {
                 Log.e("firebasestorage", "onFailure: did not delete file");
             }
         });
+
+    }
+
+    private void SearchProduct(String searchText){
+
+        //searchText = searchText.replaceAll("\\s","");
+        searchText = searchText.replace("\n", "");
+        searchText = searchText.toUpperCase();
+
+        Log.i(TAG, "SEARCH TEX : " +searchText);
+
+        PB_loading.setVisibility(View.VISIBLE);
+
+        Query query1 = mDatabaseRef.orderByChild("productName").startAt(searchText).endAt(searchText+"\uf8ff");;
+
+                /*myTopPostsQuery.addChildEventListener(new ChildEventListener() {
+                    // TODO: implement the ChildEventListener methods as documented above
+                    // ...
+                });*/
+
+        query1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                pList.clear();
+
+                for(DataSnapshot ds : dataSnapshot.getChildren()){
+                    Product p = ds.getValue(Product.class);
+                    pList.add(p);
+                    Log.i(TAG,p.getProductName());
+                }
+
+                mRecycleAdapter = new HLVAdapter(getApplicationContext(), pList);
+                RecyclerView_StockList.setAdapter(mRecycleAdapter);
+
+                PB_loading.setVisibility(View.INVISIBLE);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                PB_loading.setVisibility(View.INVISIBLE);
+            }
+        });
+
+
 
     }
 }
