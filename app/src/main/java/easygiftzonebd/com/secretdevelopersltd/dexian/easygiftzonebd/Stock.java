@@ -267,7 +267,7 @@ public class Stock extends AppCompatActivity {
                     case R.id.ProCost:
                         Log.i(TAG,"COST");
                         //your code
-                        Toast.makeText(getApplicationContext(),"COST: "+pList.get(position).getProductCost(),Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(),"COST: "+pList.get(position).getProductCost(),Toast.LENGTH_LONG).show();
                         return true;
 
                     default:
