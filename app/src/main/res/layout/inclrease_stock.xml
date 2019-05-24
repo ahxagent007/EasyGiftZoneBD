@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Stock"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:padding="2dp"
+        android:textColor="#000000"/>
+
+    <EditText
+        android:id="@+id/ET_currentStock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/TV_productname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Product Name Product Name Product"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        android:padding="2dp"
+        android:textColor="#000000"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btn_quantitySubDone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="-"
+            android:textSize="35dp"
+            android:background="@drawable/round_btn_pressed_red"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/btn_quantityAddDone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"
+            android:textSize="35dp"
+            android:background="@drawable/round_btn_pressed_green"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

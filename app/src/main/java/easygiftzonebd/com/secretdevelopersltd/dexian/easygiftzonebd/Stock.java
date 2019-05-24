@@ -260,7 +260,9 @@ public class Stock extends AppCompatActivity {
                         return true;
 
                     case R.id.ProEdit:
+                        EditStockQuantity(pList.get(position));
                         Log.i(TAG,"EDIT");
+
                         //your code
                         return true;
 
@@ -343,5 +345,65 @@ public class Stock extends AppCompatActivity {
 
 
     }
+
+    private void EditStockQuantity(final Product selectedProduct){
+
+        AlertDialog.Builder myBuilder = new AlertDialog.Builder(Stock.this);
+        View myView = getLayoutInflater().inflate(R.layout.inclrease_stock, null);
+
+
+        final TextView TV_productname, ET_currentStock;
+        Button btn_quantityAddDone,btn_quantitySubDone;
+
+        ET_currentStock = myView.findViewById(R.id.ET_currentStock);
+        TV_productname = myView.findViewById(R.id.TV_productname);
+        btn_quantityAddDone = myView.findViewById(R.id.btn_quantityAddDone);
+        btn_quantitySubDone = myView.findViewById(R.id.btn_quantitySubDone);
+
+
+        ET_currentStock.setText(""+selectedProduct.getProductStockQuantity());
+        TV_productname.setText(selectedProduct.getProductName()+" "+selectedProduct.getProductName());
+
+        myBuilder.setView(myView);
+        final AlertDialog Dialog = myBuilder.create();
+        Dialog.show();
+
+        btn_quantityAddDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                int newQuantity = Integer.parseInt(ET_currentStock.getText().toString());
+
+                selectedProduct.setProductStockQuantity(selectedProduct.getProductStockQuantity()+newQuantity);
+
+                mDatabaseRef.child(""+selectedProduct.getProductID()).setValue(selectedProduct);
+
+                Toast.makeText(getApplicationContext(),"Stock in "+newQuantity+" pc",Toast.LENGTH_LONG).show();
+
+                Dialog.cancel();
+
+            }
+        });
+
+        btn_quantitySubDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                int newQuantity = Integer.parseInt(ET_currentStock.getText().toString());
+
+                selectedProduct.setProductStockQuantity(selectedProduct.getProductStockQuantity()-newQuantity);
+
+                mDatabaseRef.child(""+selectedProduct.getProductID()).setValue(selectedProduct);
+
+                Toast.makeText(getApplicationContext(),"Stock out "+newQuantity+" pc",Toast.LENGTH_LONG).show();
+
+                Dialog.cancel();
+
+            }
+        });
+
+
+    }
+
 }
 
